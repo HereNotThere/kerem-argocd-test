@@ -12,22 +12,21 @@ global:
     targetRevision: main
   valuesFile: ./environments/gamma/values.yaml
 argocdApplications:
-  - name: argocd-umbrella
-    disable: false
-    namespace: argocd
-  - name: external-secrets-umbrella
-    disable: false
-    namespace: external-secrets
-  - name: datadog-umbrella
-    disable: false
-    namespace: datadog
-  - name: metrics-aggregator
-    disable: false
-    namespace: default # TODO: should i move this to a separate namespace?
-
-metrics-aggregator:
-  riverRpcUrl:
-    value: "https://testnet.rpc.river.build/http" # TODO: turn this into a secret
+  # - name: argocd-umbrella
+  #   disable: false
+  #   namespace: argocd
+  # - name: external-secrets-umbrella
+  #   disable: false
+  #   namespace: external-secrets
+  # - name: datadog-umbrella
+  #   disable: false
+  #   namespace: datadog
+  # - name: metrics-aggregator
+  #   disable: false
+  #   namespace: default # TODO: should i move this to a separate namespace?
+# metrics-aggregator:
+#   riverRpcUrl:
+#     value: "https://testnet.rpc.river.build/http" # TODO: turn this into a secret
 # ################### DATADOG ###################
 
 # datadog:
