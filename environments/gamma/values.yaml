@@ -18,6 +18,9 @@ argocdApplications:
   - name: external-secrets-umbrella
     disable: false
     namespace: external-secrets
+  - name: infra
+    disable: false
+    namespace: infra
 # - name: datadog-umbrella
 #   disable: false
 #   namespace: datadog
