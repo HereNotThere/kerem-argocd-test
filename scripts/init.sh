@@ -15,6 +15,8 @@ argocd app create app-of-apps \
     --path charts/app-of-apps \
     --values ../../environments/gamma/values.yaml \
     --sync-policy automated \
+    --auto-prune=true \
+    --self-heal=true \
     --upsert
     
 # argocd app sync app-of-apps
