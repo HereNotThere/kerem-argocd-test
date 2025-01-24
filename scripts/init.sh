@@ -12,9 +12,13 @@
 
 
 
+# TODO: make this configurable, or better yet turn this whole declaration into a separate argo-cd app
 argocd app create apps \
     --dest-namespace argocd \
     --dest-server https://kubernetes.default.svc \
     --repo https://github.com/HereNotThere/kerem-argocd-test \
-    --path apps  
+    --path apps \
+    --values-literal-file environments/gamma/values.yaml \
+    --upsert
+    
 argocd app sync apps 
