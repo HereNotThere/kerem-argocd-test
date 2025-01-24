@@ -10,7 +10,8 @@ global:
     source:
       repoURL: https://github.com/HereNotThere/kerem-argocd-test
     targetRevision: main
-  valuesFile: ./environments/gamma/values.yaml
+  valuesFile: ../../../environments/gamma/values.yaml
+
 argocdApplications:
   # - name: argocd-umbrella
   #   disable: false
@@ -21,9 +22,10 @@ argocdApplications:
   # - name: datadog-umbrella
   #   disable: false
   #   namespace: datadog
-  # - name: metrics-aggregator
-  #   disable: false
-  #   namespace: default # TODO: should i move this to a separate namespace?
+  - name: metrics-aggregator
+    disable: false
+    namespace: default # TODO: should i move this to a separate namespace?
+
 # metrics-aggregator:
 #   riverRpcUrl:
 #     value: "https://testnet.rpc.river.build/http" # TODO: turn this into a secret

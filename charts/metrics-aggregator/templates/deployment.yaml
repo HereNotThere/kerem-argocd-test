@@ -53,7 +53,7 @@ spec:
           imagePullPolicy: {{ .Values.metricsDiscovery.image.pullPolicy }}
           env:
             - name: ENV
-              value: gamma # TODO: pass via values.yaml
+              value: {{ .Values.global.env }}
               # valueFrom:
               #   configMapKeyRef:
               #     name: {{ .Values.global.env }}
