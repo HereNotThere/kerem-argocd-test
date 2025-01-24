@@ -12,7 +12,6 @@
 
 
 
-# TODO: make this configurable, or better yet turn this whole declaration into a separate argo-cd app
 # argocd app create apps \
 #     --dest-namespace argocd \
 #     --dest-server https://kubernetes.default.svc \
@@ -21,6 +20,8 @@
 #     --values ../../environments/gamma/values.yaml \
 #     --upsert
 
+
+# TODO: make this configurable, or better yet turn this whole declaration into a separate argo-cd app
 argocd app create app-of-apps \
     --dest-namespace argocd \
     --dest-server https://kubernetes.default.svc \
