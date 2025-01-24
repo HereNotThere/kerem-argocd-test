@@ -16,6 +16,7 @@ argocd app create app-of-apps \
     --repo https://github.com/HereNotThere/kerem-argocd-test \
     --path charts/app-of-apps \
     --values ../../environments/gamma/values.yaml \
+    --sync-policy automated \
     --upsert
     
 # argocd app sync app-of-apps

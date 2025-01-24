@@ -21,18 +21,13 @@ argocdApplications:
   - name: datadog-umbrella
     disable: false
     namespace: datadog
-# argocd-umbrella:
-#   server:
-#     ingress:
-#       enabled: true
-#     service:
-#       type: ClusterIP
-# datadog-umbrella:
-#   datadog:
-#     apiKeyExistingSecret: datadog-secret
-#     appKeyExistingSecret: datadog-secret
-#     prometheusScrape:
-#       enabled: true
+  - name: metrics-aggregator
+    disable: false
+    namespace: default # TODO: should i move this to a separate namespace?
+
+metrics-aggregator:
+  riverRpcUrl:
+    value: "https://testnet.rpc.river.build/http" # TODO: turn this into a secret
 # ################### DATADOG ###################
 
 # datadog:
