@@ -12,12 +12,12 @@ global:
     targetRevision: main
   valuesFile: ./environments/gamma/values.yaml
 argocdApplications:
-  - name: argocd-umbrella
+  #   - name: argocd-umbrella
+  #     disable: false
+  #     namespace: argocd
+  - name: external-secrets-umbrella
     disable: false
-    namespace: argocd
-  # - name: external-secrets-umbrella
-  #   disable: false
-  #   namespace: external-secrets
+    namespace: external-secrets
 # - name: datadog-umbrella
 #   disable: false
 #   namespace: datadog

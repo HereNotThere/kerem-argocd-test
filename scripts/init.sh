@@ -20,5 +20,13 @@ argocd app create apps \
     --path apps \
     --values-literal-file environments/gamma/values.yaml \
     --upsert
+
+argocd app create app-of-apps \
+    --dest-namespace argocd \
+    --dest-server https://kubernetes.default.svc \
+    --repo https://github.com/HereNotThere/kerem-argocd-test \
+    --path charts/app-of-apps \
+    --values-literal-file environments/gamma/values.yaml \
+    --upsert
     
 argocd app sync apps 
