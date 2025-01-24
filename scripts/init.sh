@@ -8,20 +8,8 @@
 #   --set server.service.type=ClusterIP \
 #   --create-namespace
 
-# # TODO: maybe all of these should also be a separate helm chart that describe underlying resources for the entire project
 
-
-
-# argocd app create apps \
-#     --dest-namespace argocd \
-#     --dest-server https://kubernetes.default.svc \
-#     --repo https://github.com/HereNotThere/kerem-argocd-test \
-#     --path apps \
-#     --values ../../environments/gamma/values.yaml \
-#     --upsert
-
-
-# TODO: make this configurable, or better yet turn this whole declaration into a separate argo-cd app
+# # TODO: make this configurable, or better yet turn this whole declaration into a separate argo-cd app
 argocd app create app-of-apps \
     --dest-namespace argocd \
     --dest-server https://kubernetes.default.svc \
@@ -30,4 +18,4 @@ argocd app create app-of-apps \
     --values ../../environments/gamma/values.yaml \
     --upsert
     
-argocd app sync apps 
+# argocd app sync app-of-apps
