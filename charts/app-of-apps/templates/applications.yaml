@@ -3,7 +3,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ required .name }}-{{ $.Values.global.env }}
+  name: {{ .name }}-{{ $.Values.global.env }}
   namespace: argocd
 spec:
   project: {{ $.Values.global.spec.project }}
