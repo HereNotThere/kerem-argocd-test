@@ -13,19 +13,23 @@ global:
   valuesFile: ./environments/gamma/values.yaml
 
 argocdApplications:
-  - name: argocd-umbrella
+  - name: infra
     disable: false
-    namespace: argocd
-  - name: datadog-umbrella
-    disable: false
-    namespace: datadog
+    namespace: infra
+# argocdApplications:
+#   - name: argocd-umbrella
+#     disable: false
+#     namespace: argocd
+#   - name: datadog-umbrella
+#     disable: false
+#     namespace: datadog
 
-argocd-umbrella:
-  server:
-    ingress:
-      enabled: true
-    service:
-      type: ClusterIP
+# argocd-umbrella:
+#   server:
+#     ingress:
+#       enabled: true
+#     service:
+#       type: ClusterIP
 # datadog-umbrella:
 #   datadog:
 #     apiKeyExistingSecret: datadog-secret

@@ -22,9 +22,9 @@ spec:
   syncPolicy:
     {{- if not .disableAutomated }}
     automated:
-      prune: false
-      selfHeal: true
-      allowEmpty: false
+      prune: true # TODO: is this okay?
+      selfHeal: true # TODO: is this okay?
+      allowEmpty: true # TODO: is this okay?
     {{- end }}
     syncOptions:
       - CreateNamespace=true
