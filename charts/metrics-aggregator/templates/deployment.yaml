@@ -53,12 +53,14 @@ spec:
           imagePullPolicy: {{ .Values.metricsDiscovery.image.pullPolicy }}
           env:
             - name: ENV
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ .Values.global.env }}
-                  key: riverEnv
+              value: gamma # TODO: pass via values.yaml
+              # valueFrom:
+              #   configMapKeyRef:
+              #     name: {{ .Values.global.env }}
+              #     key: riverEnv
             - name: RIVER_RPC_URL
-              {{- toYaml .Values.metricsDiscovery.riverRpcUrl | nindent 14 }}
+              value: https://testnet.rpc.river.build/http # TODO: pass via values.yaml
+              # {{- toYaml .Values.metricsDiscovery.riverRpcUrl | nindent 14 }}
         #   livenessProbe: # TODO: implement this
         #   readinessProbe: # TODO: implement this
           volumeMounts:
