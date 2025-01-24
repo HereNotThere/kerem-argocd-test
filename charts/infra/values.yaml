@@ -1,6 +1,0 @@
-argo-cd:
-  server:
-    ingress:
-      enabled: true
-    service:
-      type: ClusterIP

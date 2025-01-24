@@ -11,18 +11,16 @@ global:
       repoURL: https://github.com/HereNotThere/kerem-argocd-test
     targetRevision: main
   valuesFile: ./environments/gamma/values.yaml
-
 argocdApplications:
-  - name: infra
+  - name: argocd-umbrella
     disable: false
-    namespace: infra
-# argocdApplications:
-#   - name: argocd-umbrella
-#     disable: false
-#     namespace: argocd
-#   - name: datadog-umbrella
-#     disable: false
-#     namespace: datadog
+    namespace: argocd
+  - name: external-secrets-umbrella
+    disable: false
+    namespace: external-secrets
+# - name: datadog-umbrella
+#   disable: false
+#   namespace: datadog
 
 # argocd-umbrella:
 #   server:
