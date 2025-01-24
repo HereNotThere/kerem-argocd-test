@@ -15,6 +15,10 @@ global:
 argocdApplications:
   - name: argocd-umbrella
     disable: false
+    namespace: argocd
+  - name: datadog-umbrella
+    disable: false
+    namespace: datadog
 
 argocd-umbrella:
   server:
@@ -22,6 +26,12 @@ argocd-umbrella:
       enabled: true
     service:
       type: ClusterIP
+# datadog-umbrella:
+#   datadog:
+#     apiKeyExistingSecret: datadog-secret
+#     appKeyExistingSecret: datadog-secret
+#     prometheusScrape:
+#       enabled: true
 # ################### DATADOG ###################
 
 # datadog:
