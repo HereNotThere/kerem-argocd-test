@@ -5,7 +5,6 @@ helm install argocd argo/argo-cd \
   --version 7.7.16 \
   --namespace argocd \
   --set server.ingress.enabled=true \
-  --set server.ingress.hosts={your-argocd.example.com} \
   --set server.service.type=ClusterIP \
   --create-namespace
 

@@ -1,43 +1,55 @@
-################### GLOBAL ###################
+# ################### GLOBAL ###################
 
 global:
-  riverEnv: gamma
+  env: gamma
+  spec:
+    project: default
+    source:
+      repoURL: https://github.com/HereNotThere/kerem-argocd-test
+    targetRevision: main
+  valuesFile: environments/gamma/values.yaml
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
 
-################### DATADOG ###################
+argocdApplications:
+  - name: argocd-umbrella
+    disable: false
+# ################### DATADOG ###################
 
-datadog:
-  datadog:
-    apiKeyExistingSecret: datadog-secret
-    appKeyExistingSecret: datadog-secret
-    prometheusScrape:
-      enabled: true
+# datadog:
+#   datadog:
+#     apiKeyExistingSecret: datadog-secret
+#     appKeyExistingSecret: datadog-secret
+#     prometheusScrape:
+#       enabled: true
 
-  agents:
-    containers:
-      agent:
-        # resources for the Agent container
-        resources:
-          requests:
-            cpu: 200m
-            memory: 256Mi
+#   agents:
+#     containers:
+#       agent:
+#         # resources for the Agent container
+#         resources:
+#           requests:
+#             cpu: 200m
+#             memory: 256Mi
 
-      traceAgent:
-        # resources for the Trace Agent container
-        resources:
-          requests:
-            cpu: 100m
-            memory: 200Mi
+#       traceAgent:
+#         # resources for the Trace Agent container
+#         resources:
+#           requests:
+#             cpu: 100m
+#             memory: 200Mi
 
-      processAgent:
-        # resources for the Process Agent container
-        resources:
-          requests:
-            cpu: 100m
-            memory: 200Mi
+#       processAgent:
+#         # resources for the Process Agent container
+#         resources:
+#           requests:
+#             cpu: 100m
+#             memory: 200Mi
 
-    priorityClassCreate: true
+#     priorityClassCreate: true
 
-  clusterAgent:
-    enabled: true
-    metricsProvider:
-      enabled: true
+#   clusterAgent:
+#     enabled: true
+#     metricsProvider:
+#       enabled: true
