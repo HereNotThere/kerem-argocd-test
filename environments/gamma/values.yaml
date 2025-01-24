@@ -10,7 +10,7 @@ global:
     source:
       repoURL: https://github.com/HereNotThere/kerem-argocd-test
     targetRevision: main
-  valuesFile: ./environments/gamma/values.yaml
+  valuesFile: ../../environments/gamma/values.yaml
 argocdApplications:
   - name: argocd-umbrella
     disable: false
