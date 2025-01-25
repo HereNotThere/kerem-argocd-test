@@ -21,13 +21,13 @@ appOfApps:
       disable: false
       namespace: argocd
     - name: external-secrets-umbrella
-      disable: true
+      disable: false
       namespace: external-secrets
     - name: datadog-umbrella
-      disable: true
+      disable: false
       namespace: datadog
     - name: metrics-aggregator
-      disable: true
+      disable: false
       namespace: default # TODO: should i move this to a separate namespace?
 # metrics-aggregator:
 #   riverRpcUrl:
