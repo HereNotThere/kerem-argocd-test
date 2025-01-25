@@ -13,7 +13,7 @@ spec:
     path: charts/{{ .name }}
     helm:
       valueFiles:
-      - {{ $.Values.appOfApps.default.valuesFile }}
+      - {{ $.Values.appOfApps.default.spec.valuesFile }}
   destination:
     namespace: {{ default $.Values.appOfApps.default.spec.destination.namespace  .namespace }}
     server: {{ $.Values.appOfApps.default.spec.destination.server }}
