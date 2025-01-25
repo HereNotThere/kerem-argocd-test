@@ -22,7 +22,7 @@ appOfApps:
           valueFiles: ../../environments/gamma/values.yaml
   applications:
     - name: infra
-      disable: false
+      disable: true
       namespace: infra
     # - name: argocd-umbrella
     #   disable: true
