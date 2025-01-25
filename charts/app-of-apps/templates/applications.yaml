@@ -17,6 +17,7 @@ spec:
     path: charts/{{ .name }}
     helm:
       valueFiles:
+      - './values.yaml'
       - {{ $.Values.appOfApps.default.spec.source.helm.valueFiles }}
   destination:
     namespace: {{ default $.Values.appOfApps.default.spec.destination.namespace  .namespace }}

@@ -22,9 +22,6 @@ appOfApps:
     # - name: argocd-umbrella
     #   disable: true
     #   namespace: argocd
-    # - name: external-secrets-umbrella
-    #   disable: true
-    #   namespace: default
     # - name: datadog-umbrella
     #   disable: true
     #   namespace: default
