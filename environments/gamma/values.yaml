@@ -2,6 +2,8 @@
 
 global:
   environmentName: gamma
+  gcp:
+    projectId: hnt-live-shared # TODO: make sure we don't reuse this on other environments
 
 appOfApps:
   default:
