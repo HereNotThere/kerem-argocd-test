@@ -5,6 +5,10 @@ kind: Application
 metadata:
   name: {{ .name }}-{{ $.Values.global.environmentName }}
   namespace: argocd
+    {{- if not .disableAutomated }}
+    finalizers:
+      - resources-finalizer.argocd.argoproj.io
+    {{- end }}
 spec:
   project: {{ $.Values.appOfApps.default.spec.project }}
   source:
