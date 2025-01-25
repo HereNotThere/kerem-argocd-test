@@ -3,7 +3,6 @@
 global:
   # TODO: go over these keys and pick ones with less collision
   env: gamma # TODO: argocd uses the env key, and expects it to be a list. don't use it here.
-  valuesFile: ../../environments/gamma/values.yaml
 
 appOfApps:
   default:
@@ -14,6 +13,7 @@ appOfApps:
       project: default
       source:
         repoURL: https://github.com/HereNotThere/kerem-argocd-test
+        valuesFile: ../../environments/gamma/values.yaml
       targetRevision: main
   applications:
     - name: argocd-umbrella
