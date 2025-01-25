@@ -23,7 +23,7 @@ appOfApps:
 
   applications:
     - name: infra
-      disable: true
+      disable: false
       namespace: infra
     # - name: argocd-umbrella
     #   disable: true
