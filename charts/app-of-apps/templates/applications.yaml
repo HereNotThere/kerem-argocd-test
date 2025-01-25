@@ -1,4 +1,4 @@
-{{- range $app := .Values.argocdApplications -}}
+{{- range $app := .Values.appOfApps.applications -}}
 {{ if not .disable }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -6,17 +6,17 @@ metadata:
   name: {{ .name }}-{{ $.Values.global.env }}
   namespace: argocd
 spec:
-  project: {{ $.Values.global.spec.project }}
+  project: {{ $.Values.appOfApps.default.spec.project }}
   source:
-    repoURL:  {{ $.Values.global.spec.source.repoURL }}
-    targetRevision: {{ default $.Values.global.spec.source.targetRevision .targetRevision }}
+    repoURL:  {{ $.Values.appOfApps.default.spec.source.repoURL }}
+    targetRevision: {{ default $.Values.appOfApps.default.spec.source.targetRevision .targetRevision }}
     path: charts/{{ .name }}
     helm:
       valueFiles:
-      - {{ $.Values.global.valuesFile }}
+      - {{ $.Values.appOfApps.default.valuesFile }}
   destination:
-    namespace: {{ default $.Values.global.spec.destination.namespace  .namespace }}
-    server: {{ $.Values.global.spec.destination.server }}
+    namespace: {{ default $.Values.appOfApps.default.spec.destination.namespace  .namespace }}
+    server: {{ $.Values.appOfApps.default.spec.destination.server }}
   syncPolicy:
     {{- if not .disableAutomated }}
     automated:

@@ -1,8 +1,13 @@
 # ################### GLOBAL ###################
 
 global:
-  env: gamma
-  spec:
+  # TODO: go over these keys and pick ones with less collision
+  env: gamma # TODO: argocd uses the env key, and expects it to be a list. don't use it here.
+  valuesFile: ../../environments/gamma/values.yaml
+
+appOfApps:
+  default:
+    spec:
     destination:
       namespace: argocd
       server: https://kubernetes.default.svc
@@ -10,22 +15,19 @@ global:
     source:
       repoURL: https://github.com/HereNotThere/kerem-argocd-test
     targetRevision: main
-  valuesFile: ../../environments/gamma/values.yaml
-
-argocdApplications:
-  - name: argocd-umbrella
-    disable: false
-    namespace: argocd
-  - name: external-secrets-umbrella
-    disable: false
-    namespace: external-secrets
-  # - name: datadog-umbrella
-  #   disable: false
-  #   namespace: datadog
-  - name: metrics-aggregator
-    disable: false
-    namespace: default # TODO: should i move this to a separate namespace?
-
+  applications:
+    - name: argocd-umbrella
+      disable: true
+      namespace: argocd
+    - name: external-secrets-umbrella
+      disable: true
+      namespace: external-secrets
+    - name: datadog-umbrella
+      disable: true
+      namespace: datadog
+    - name: metrics-aggregator
+      disable: true
+      namespace: default # TODO: should i move this to a separate namespace?
 # metrics-aggregator:
 #   riverRpcUrl:
 #     value: "https://testnet.rpc.river.build/http" # TODO: turn this into a secret
