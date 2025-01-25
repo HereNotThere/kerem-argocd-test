@@ -22,17 +22,9 @@ appOfApps:
           valueFiles: ../../environments/gamma/values.yaml
 
   applications:
-    - name: external-secrets
-      disable: false
-      namespace: external-secrets
-      spec:
-        source:
-          repoURL: https://github.com/external-secrets/external-secrets
-          targetRevision: helm-chart-0.13.0
-          path: deploy/charts/external-secrets
-    # - name: infra
-    #   disable: true
-    #   namespace: infra
+    - name: infra
+      disable: true
+      namespace: infra
     # - name: argocd-umbrella
     #   disable: true
     #   namespace: argocd
