@@ -20,6 +20,7 @@ appOfApps:
         targetRevision: main
         helm:
           valueFiles: ../../environments/gamma/values.yaml
+
   applications:
     - name: external-secrets
       disable: false
