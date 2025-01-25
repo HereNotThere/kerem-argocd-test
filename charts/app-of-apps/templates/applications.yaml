@@ -12,8 +12,8 @@ metadata:
 spec:
   project: {{ $.Values.appOfApps.default.spec.project }}
   source:
-    repoURL:  {{ default $.Values.appOfApps.default.spec.source.repoURL .repoURL }}
-    targetRevision: {{ default $.Values.appOfApps.default.spec.source.targetRevision .targetRevision }}
+    repoURL:  {{ default $.Values.appOfApps.default.spec.source.repoURL .spec.source.repoURL }}
+    targetRevision: {{ default $.Values.appOfApps.default.spec.source.targetRevision .spec.source.targetRevision }}
     path: {{ default "charts/{{ .name }}" .spec.source.path }}
     helm:
       valueFiles:
