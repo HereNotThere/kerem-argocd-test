@@ -18,7 +18,7 @@ appOfApps:
   applications:
     - name: infra
       disable: false
-      namespace: default
+      namespace: infra
     # - name: argocd-umbrella
     #   disable: true
     #   namespace: argocd
