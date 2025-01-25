@@ -16,18 +16,21 @@ appOfApps:
         helm:
           valueFiles: ../../environments/gamma/values.yaml
   applications:
+    - name: infra
+      disable: false
+      namespace: default
     # - name: argocd-umbrella
     #   disable: true
     #   namespace: argocd
-    - name: external-secrets-umbrella
-      disable: true
-      namespace: external-secrets
-    - name: datadog-umbrella
-      disable: true
-      namespace: datadog
-    - name: metrics-aggregator
-      disable: true
-      namespace: default # TODO: should i move this to a separate namespace?
+    # - name: external-secrets-umbrella
+    #   disable: true
+    #   namespace: default
+    # - name: datadog-umbrella
+    #   disable: true
+    #   namespace: default
+    # - name: metrics-aggregator
+    #   disable: true
+    #   namespace: default
 # metrics-aggregator:
 #   riverRpcUrl:
 #     value: "https://testnet.rpc.river.build/http" # TODO: turn this into a secret
