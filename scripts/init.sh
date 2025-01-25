@@ -20,3 +20,5 @@
 #     --upsert
     
 # # argocd app sync app-of-apps
+
+kubectl apply -f ./environments/gamma/applications.yaml
