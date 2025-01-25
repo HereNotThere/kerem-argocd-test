@@ -1,8 +1,7 @@
 # ################### GLOBAL ###################
 
 global:
-  # TODO: go over these keys and pick ones with less collision
-  environmentName: gamma # TODO: argocd uses the env key, and expects it to be a list. don't use it here.
+  environmentName: gamma
 
 appOfApps:
   default:

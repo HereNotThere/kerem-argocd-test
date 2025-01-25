@@ -7,16 +7,16 @@
 #   --set server.service.type=ClusterIP \
 #   --create-namespace
 
-# # TODO: make this configurable, or better yet turn this whole declaration into a separate argo-cd app
-argocd app create app-of-apps \
-    --dest-namespace argocd \
-    --dest-server https://kubernetes.default.svc \
-    --repo https://github.com/HereNotThere/kerem-argocd-test \
-    --path charts/app-of-apps \
-    --values ../../environments/gamma/values.yaml \
-    --sync-policy automated \
-    --auto-prune=true \
-    --self-heal=true \
-    --upsert
+# # # TODO: make this configurable, or better yet turn this whole declaration into a separate argo-cd app
+# argocd app create app-of-apps \
+#     --dest-namespace argocd \
+#     --dest-server https://kubernetes.default.svc \
+#     --repo https://github.com/HereNotThere/kerem-argocd-test \
+#     --path charts/app-of-apps \
+#     --values ../../environments/gamma/values.yaml \
+#     --sync-policy automated \
+#     --auto-prune=true \
+#     --self-heal=true \
+#     --upsert
     
-# argocd app sync app-of-apps
+# # argocd app sync app-of-apps
