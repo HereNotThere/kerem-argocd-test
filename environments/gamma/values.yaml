@@ -22,9 +22,9 @@ appOfApps:
           valueFiles: ../../environments/gamma/values.yaml
 
   applications:
-    - name: infra
+    - name: external-secrets-app
       disable: true
-      namespace: infra
+      namespace: external-secrets
     # - name: argocd-umbrella
     #   disable: true
     #   namespace: argocd
