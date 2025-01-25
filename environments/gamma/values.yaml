@@ -17,9 +17,9 @@ appOfApps:
         helm:
           valueFiles: ../../environments/gamma/values.yaml
   applications:
-    - name: argocd-umbrella
-      disable: true
-      namespace: argocd
+    # - name: argocd-umbrella
+    #   disable: true
+    #   namespace: argocd
     - name: external-secrets-umbrella
       disable: true
       namespace: external-secrets
