@@ -28,6 +28,7 @@ appOfApps:
         source:
           repoURL: https://github.com/external-secrets/external-secrets
           targetRevision: helm-chart-0.13.0
+          path: deploy/charts/external-secrets
     # - name: infra
     #   disable: true
     #   namespace: infra

@@ -14,7 +14,7 @@ spec:
   source:
     repoURL:  {{ default $.Values.appOfApps.default.spec.source.repoURL .repoURL }}
     targetRevision: {{ default $.Values.appOfApps.default.spec.source.targetRevision .targetRevision }}
-    path: charts/{{ .name }}
+    path: {{ default "charts/{{ .name }}" .path }}
     helm:
       valueFiles:
       - './values.yaml'
