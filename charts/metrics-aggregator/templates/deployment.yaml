@@ -53,10 +53,10 @@ spec:
           imagePullPolicy: {{ .Values.metricsDiscovery.image.pullPolicy }}
           env:
             - name: ENV
-              value: {{ .Values.global.env }}
+              value: {{ .values.global.environmentName }}
               # valueFrom:
               #   configMapKeyRef:
-              #     name: {{ .Values.global.env }}
+              #     name: {{ .values.global.environmentName }}
               #     key: riverEnv
             - name: RIVER_RPC_URL
               value: https://testnet.rpc.river.build/http # TODO: pass via values.yaml
