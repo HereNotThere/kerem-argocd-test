@@ -17,7 +17,7 @@ appOfApps:
     targetRevision: main
   applications:
     - name: argocd-umbrella
-      disable: true
+      disable: false
       namespace: argocd
     - name: external-secrets-umbrella
       disable: true
