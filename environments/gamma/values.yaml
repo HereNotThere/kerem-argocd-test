@@ -13,8 +13,9 @@ appOfApps:
       project: default
       source:
         repoURL: https://github.com/HereNotThere/kerem-argocd-test
-        valuesFile: ../../environments/gamma/values.yaml
-      targetRevision: main
+        targetRevision: main
+        helm:
+          valueFiles: ../../environments/gamma/values.yaml
   applications:
     - name: argocd-umbrella
       disable: false
