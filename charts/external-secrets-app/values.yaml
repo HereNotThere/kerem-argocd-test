@@ -1,6 +1,6 @@
-# datadog-umbrella:
-#   datadog:
-#     apiKeyExistingSecret: datadog-secret
-#     appKeyExistingSecret: datadog-secret
-#     prometheusScrape:
-#       enabled: true
+# serviceAccount:
+#   create: true
+#   automount: true
+#   annotations: {
+
+#   }
