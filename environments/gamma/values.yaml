@@ -11,9 +11,6 @@ global:
 appOfApps:
   default:
     spec:
-      destination:
-        namespace: argocd
-        server: https://kubernetes.default.svc
       project: default
       source:
         repoURL: https://github.com/HereNotThere/kerem-argocd-test

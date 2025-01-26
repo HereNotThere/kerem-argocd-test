@@ -20,7 +20,7 @@ spec:
       - './values.yaml'
       - {{ $.Values.appOfApps.default.spec.source.helm.valueFiles }}
   destination:
-    namespace: {{ default $.Values.appOfApps.default.spec.destination.namespace  .namespace }}
+    namespace: {{ .namespace }}
     server: {{ $.Values.appOfApps.default.spec.destination.server }}
   syncPolicy:
     {{- if not .disableAutomated }}
