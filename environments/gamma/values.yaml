@@ -19,7 +19,7 @@ appOfApps:
           valueFiles: ../../environments/gamma/values.yaml
 
   applications:
-    - name: external-secrets-app
+    - name: external-secrets
       disable: false
       namespace: external-secrets
     # - name: argocd-umbrella
