@@ -4,3 +4,12 @@
 #   annotations: {
 
 #   }
+
+# external-secrets:
+#   serviceAccount:
+#     create: true
+#     automount: true
+#     annotations:
+#       {
+#         "iam.gke.io/gcp-service-account": "external-secrets-operator@{{ .Values.global.gcp.projectId }}.iam.gserviceaccount.com",
+#       }
