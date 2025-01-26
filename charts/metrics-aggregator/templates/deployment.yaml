@@ -54,10 +54,6 @@ spec:
           env:
             - name: ENV
               value: {{ .Values.global.environmentName }}
-              # valueFrom:
-              #   configMapKeyRef:
-              #     name: {{ .Values.global.environmentName }}
-              #     key: riverEnv
             - name: RIVER_RPC_URL
               value: https://testnet.rpc.river.build/http # TODO: pass via values.yaml
         #   livenessProbe: # TODO: implement this
