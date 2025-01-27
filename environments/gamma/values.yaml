@@ -29,7 +29,7 @@ appOfApps:
     #   disable: true
     #   namespace: default
     - name: metrics-aggregator
-      disable: true
+      disable: false
       namespace: default
 # metrics-aggregator:
 #   riverRpcUrl:
