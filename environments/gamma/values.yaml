@@ -19,7 +19,7 @@ appOfApps:
 
   applications:
     - name: external-secrets
-      disable: false
+      disable: true
       namespace: external-secrets
     # - name: argocd-umbrella
     #   disable: true
@@ -28,7 +28,7 @@ appOfApps:
     #   disable: true
     #   namespace: default
     - name: metrics-aggregator
-      disable: false
+      disable: true
       namespace: default
 # metrics-aggregator:
 #   riverRpcUrl:
