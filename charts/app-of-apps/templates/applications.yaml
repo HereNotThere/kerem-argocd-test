@@ -19,6 +19,11 @@ spec:
       valueFiles:
       - './values.yaml'
       - {{ default $.Values.appOfApps.default.valuesFile .valuesFile }}
+  destination:
+    namespace: {{ .namespace }}
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    {{- if not .disableAutomated }}
     automated:
       prune: true # TODO: is this okay?
       selfHeal: true # TODO: is this okay?
