@@ -38,3 +38,7 @@ external-secrets:
     annotations:
       iam.gke.io/gcp-service-account: main-service-account@hnt-live-shared.iam.gserviceaccount.com # TODO: make sure you replace the project ID with the correct one. turn this into a tpl
 
+datadog:
+  datadog:
+    tags:
+      - environment: gamma # TODO: make this self-referencing to the environment name, instead of hardcoding it here
