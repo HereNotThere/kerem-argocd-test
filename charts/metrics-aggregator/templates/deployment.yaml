@@ -48,7 +48,7 @@ spec:
         - name: metrics-discovery
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
-          image: "{{ .Values.metricsDiscovery.image.repository }}:{{ .Values.metricsDiscovery.image.tag | default .Chart.AppVersion }}"
+          image: "{{ .Values.metricsDiscovery.image.repository }}:{{ .Values.metricsDiscovery.image.tag }}"
           imagePullPolicy: {{ .Values.metricsDiscovery.image.pullPolicy }}
           env:
             - name: ENV
