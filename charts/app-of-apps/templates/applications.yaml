@@ -28,4 +28,3 @@ spec:
       - CreateNamespace=true
 ---
 {{- end }}
-{{- end }}
