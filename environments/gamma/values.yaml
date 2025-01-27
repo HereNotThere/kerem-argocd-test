@@ -24,9 +24,9 @@ appOfApps:
     - name: argocd
       disable: false
       namespace: argocd
-    # - name: datadog-umbrella
-    #   disable: true
-    #   namespace: default
+    - name: datadog
+      disable: true
+      namespace: default
     - name: metrics-aggregator
       disable: false
       namespace: default
@@ -41,39 +41,4 @@ external-secrets:
     name: main-service-account
     annotations:
       iam.gke.io/gcp-service-account: main-service-account@hnt-live-shared.iam.gserviceaccount.com # TODO: make sure you replace the project ID with the correct one. turn this into a tpl
-# datadog:
-#   datadog:
-#     apiKeyExistingSecret: datadog-secret
-#     appKeyExistingSecret: datadog-secret
-#     prometheusScrape:
-#       enabled: true
 
-#   agents:
-#     containers:
-#       agent:
-#         # resources for the Agent container
-#         resources:
-#           requests:
-#             cpu: 200m
-#             memory: 256Mi
-
-#       traceAgent:
-#         # resources for the Trace Agent container
-#         resources:
-#           requests:
-#             cpu: 100m
-#             memory: 200Mi
-
-#       processAgent:
-#         # resources for the Process Agent container
-#         resources:
-#           requests:
-#             cpu: 100m
-#             memory: 200Mi
-
-#     priorityClassCreate: true
-
-#   clusterAgent:
-#     enabled: true
-#     metricsProvider:
-#       enabled: true
