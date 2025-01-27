@@ -4,6 +4,9 @@ datadog:
     appKeyExistingSecret: datadog-secret
     prometheusScrape:
       enabled: true
+    logs:
+      enabled: true
+      containerCollectAll: true
 
   agents:
     containers:
