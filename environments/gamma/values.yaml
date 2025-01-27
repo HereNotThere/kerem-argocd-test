@@ -41,7 +41,7 @@ external-secrets:
     create: true
     name: external-secrets # TODO: find a way to refer to the environment name (if terraform creates the operator service account using the environment name)
     annotations:
-      iam.gke.io/gcp-service-account: external-secrets-operator@hnt-live-shared.iam.gserviceaccount.com # TODO: make sure you replace the project ID with the correct one. turn this into a tpl
+      iam.gke.io/gcp-service-account: external-secrets@hnt-live-shared.iam.gserviceaccount.com # TODO: make sure you replace the project ID with the correct one. turn this into a tpl
 # datadog:
 #   datadog:
 #     apiKeyExistingSecret: datadog-secret
