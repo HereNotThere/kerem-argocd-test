@@ -10,7 +10,7 @@ global:
 
 appOfApps:
   default:
-    valuesFile: ../../environments/gamma/values.yaml
+    valuesFile: ../../environments/{{ .Values.global.environmentName }}/values.yaml
     spec:
       project: default
       source:
@@ -36,9 +36,9 @@ external-secrets:
     create: true
     name: main-service-account
     annotations:
-      iam.gke.io/gcp-service-account: main-service-account@hnt-live-shared.iam.gserviceaccount.com # TODO: make sure you replace the project ID with the correct one. turn this into a tpl
-
-datadog:
-  datadog:
-    tags:
-      - environment: gamma # TODO: make this self-referencing to the environment name, instead of hardcoding it here
+      iam.gke.io/gcp-service-account: main-service-account@{{ .Values.global.gcp.projectId }}.iam.gserviceaccount.com
+# TODO: environment tag does not work
+# datadog:
+#   datadog:
+#     tags:
+#       - environment: {{ .Values.global.environmentName }}
