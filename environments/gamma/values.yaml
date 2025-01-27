@@ -10,7 +10,7 @@ global:
 
 appOfApps:
   default:
-    valuesFile: ../../environments/gamma
+    valuesFile: ../../environments/gamma/values.yaml
     spec:
       project: default
       source:
