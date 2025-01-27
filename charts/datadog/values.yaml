@@ -6,7 +6,7 @@ datadog:
       enabled: true
     logs:
       enabled: true
-      containerCollectAll: true
+      containerCollectAll: false
 
   agents:
     containers:
