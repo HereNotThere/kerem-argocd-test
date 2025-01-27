@@ -1,7 +1,7 @@
 # ################### GLOBAL ###################
 
-global: &global
-  environmentName: gamma
+global:
+  environmentName: &environmentName gamma
   gcp:
     projectId: hnt-live-shared # TODO: make sure we don't reuse this on other environments
     gke:
@@ -41,4 +41,4 @@ external-secrets:
 datadog:
   datadog:
     tags:
-      - environment: *global.environmentName
+      - environment: *environmentName
