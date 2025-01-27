@@ -8,10 +8,6 @@ datadog:
       enabled: true
       containerCollectAll: false
       auto_multi_line_detection: true
-    tags:
-      - environment: {{ .Values.global.environmentName }}
-      - kerem: test
-      - other: {{ .Values.global.environmentName }}
 
   agents:
     containers:
