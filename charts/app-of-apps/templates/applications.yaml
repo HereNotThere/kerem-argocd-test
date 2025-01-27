@@ -18,7 +18,7 @@ spec:
     helm:
       valueFiles:
       - './values.yaml'
-      - {{ $.Values.appOfApps.default.spec.source.helm.valueFiles }}
+      {{ $.Values.appOfApps.default.spec.source.helm.valueFiles | toYaml | nindent 8 }}
   destination:
     namespace: {{ .namespace }}
     server: https://kubernetes.default.svc

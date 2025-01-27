@@ -16,7 +16,8 @@ appOfApps:
         repoURL: https://github.com/HereNotThere/kerem-argocd-test
         targetRevision: main
         helm:
-          valueFiles: ../../environments/gamma/values.yaml
+          valueFiles:
+            - ../../environments/gamma/values.yaml
 
   applications:
     - name: external-secrets
