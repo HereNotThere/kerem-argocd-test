@@ -37,8 +37,3 @@ external-secrets:
     name: main-service-account
     annotations:
       iam.gke.io/gcp-service-account: main-service-account@{{ .Values.global.gcp.projectId }}.iam.gserviceaccount.com
-# TODO: environment tag does not work
-# datadog:
-#   datadog:
-#     tags:
-#       - environment: {{ .Values.global.environmentName }}
