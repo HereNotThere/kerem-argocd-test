@@ -18,7 +18,7 @@ spec:
     helm:
       valueFiles:
       - './values.yaml'
-      - {{ $.Values.appOfApps.default.valuesFile }}
+      - {{ default $.Values.appOfApps.default.valuesFile .valuesFile }}
   destination:
     namespace: {{ .namespace }}
     server: https://kubernetes.default.svc
