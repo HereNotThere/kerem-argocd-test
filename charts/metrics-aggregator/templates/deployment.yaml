@@ -39,7 +39,6 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "metrics-aggregator.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       volumes:
@@ -55,7 +54,10 @@ spec:
             - name: ENV
               value: {{ .Values.global.environmentName }}
             - name: RIVER_RPC_URL
-              value: https://testnet.rpc.river.build/http # TODO: pass via values.yaml
+              valueFrom:
+                secretKeyRef:
+                  name: metrics-aggregator-secrets
+                  key: river-rpc-url
         #   livenessProbe: # TODO: implement this
         #   readinessProbe: # TODO: implement this
           volumeMounts:

@@ -28,9 +28,9 @@ appOfApps:
     # - name: datadog-umbrella
     #   disable: true
     #   namespace: default
-    # - name: metrics-aggregator
-    #   disable: true
-    #   namespace: default
+    - name: metrics-aggregator
+      disable: true
+      namespace: default
 # metrics-aggregator:
 #   riverRpcUrl:
 #     value: "https://testnet.rpc.river.build/http" # TODO: turn this into a secret
