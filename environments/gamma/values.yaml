@@ -10,14 +10,12 @@ global:
 
 appOfApps:
   default:
+    valuesFile: ../../environments/gamma
     spec:
       project: default
       source:
         repoURL: https://github.com/HereNotThere/kerem-argocd-test
         targetRevision: main
-        helm:
-          valueFiles:
-            - ../../environments/gamma/values.yaml
 
   applications:
     - name: external-secrets
