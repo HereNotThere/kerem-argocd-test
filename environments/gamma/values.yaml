@@ -9,7 +9,7 @@ global:
       clusterName: main-cluster # TODO: consider templatizing this one
   chains:
     river:
-      chainId: 6524490 # TODO: always update
+      chainId: "6524490" # TODO: always update
       contractAddresses:
         riverRegistry: "0xf18E98D36A6bd1aDb52F776aCc191E69B491c070" # TODO: always update this accross environments
 
@@ -49,4 +49,4 @@ appOfApps:
       values: |
         apnsTownsAppIdentifier: com.towns.internal # TODO: make sure you update this on other environments
         image:
-          tag: dev
+          tag: dev # TODO: always update
