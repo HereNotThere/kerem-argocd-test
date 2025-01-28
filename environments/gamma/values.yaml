@@ -30,6 +30,9 @@ appOfApps:
     - name: metrics-aggregator
       disable: false
       namespace: default
+    - name: notification-service
+      disable: false
+      namespace: default
 
 external-secrets:
   serviceAccount:
