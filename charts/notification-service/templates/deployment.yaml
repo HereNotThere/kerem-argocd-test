@@ -14,6 +14,7 @@ spec:
   template:
     metadata:
       annotations:
+        # TODO: add prometheus annotations
         ad.datadoghq.com/notification-service.logs: '[{"service": "notification-service"}]' # TODO: fix env tag
       labels:
         {{- include "notification-service.labels" . | nindent 8 }}
@@ -43,6 +44,7 @@ spec:
             {{- toYaml .Values.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          command: ["sleep", "infinity"] # TODO: remove me
           env:
             - name: REGISTRYCONTRACT__ADDRESS
               value: {{ required "riverRegistry contract address required" .Values.global.chains.river.contractAddresses.riverRegistry }}
