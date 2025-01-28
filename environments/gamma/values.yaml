@@ -26,7 +26,7 @@ appOfApps:
     - name: external-secrets
       disable: false
       namespace: external-secrets
-      values:
+      values: |
         external-secrets:
           serviceAccount:
             create: true
@@ -46,6 +46,5 @@ appOfApps:
     - name: notification-service
       disable: false
       namespace: default
-      values:
+      values: |
         apnsTownsAppIdentifier: com.towns.internal # TODO: make sure you update this on other environments
-
