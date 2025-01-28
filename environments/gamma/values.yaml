@@ -1,12 +1,12 @@
 # ################### GLOBAL ###################
 
 global:
-  environmentName: &environmentName gamma
+  environmentName: gamma
   gcp:
-    projectId: hnt-live-shared # TODO: make sure we don't reuse this on other environments
+    projectId: hnt-live-gamma # TODO: make sure we don't reuse this on other environments
     gke:
       clusterLocation: us-east4
-      clusterName: main-standard-global # TODO: consider templatizing this one
+      clusterName: main-cluster # TODO: consider templatizing this one
 
 appOfApps:
   default:
@@ -36,4 +36,4 @@ external-secrets:
     create: true
     name: main-service-account
     annotations:
-      iam.gke.io/gcp-service-account: main-service-account@hnt-live-shared.iam.gserviceaccount.com # TODO: make sure you replace the project ID with the correct one. turn this into a tpl
+      iam.gke.io/gcp-service-account: main-service-account@hnt-live-gamma.iam.gserviceaccount.com # TODO: make sure you replace the project ID with the correct one. turn this into a tpl
