@@ -49,14 +49,3 @@ Selector labels
 app.kubernetes.io/name: {{ include "notification-service.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
-
-{{/*
-Create the name of the service account to use
-*/}}
-{{- define "notification-service.serviceAccountName" -}}
-{{- if .Values.serviceAccount.create }}
-{{- default (include "notification-service.fullname" .) .Values.serviceAccount.name }}
-{{- else }}
-{{- default "default" .Values.serviceAccount.name }}
-{{- end }}
-{{- end }}
