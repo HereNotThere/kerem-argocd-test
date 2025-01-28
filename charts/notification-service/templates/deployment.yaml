@@ -45,11 +45,11 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           env:
             - name: REGISTRYCONTRACT__ADDRESS
-              value: {{ .Values.global.chains.river.contractAddresses.riverRegistry }}
+              value: {{ required "riverRegistry contract address required" .Values.global.chains.river.contractAddresses.riverRegistry }}
             - name: RIVERCHAIN__CHAINID
-              value: {{ .Values.global.chains.river.chainId }}
+              value: {{ required "river chainId required" .Values.global.chains.river.chainId }}
             - name: PORT
-              value: {{ .Values.service.port }}
+              value: {{ required "service port required" .Values.service.port }}
             - name: LOG__FORMAT
               value: json
             - name: LOG__LEVEL
@@ -120,7 +120,7 @@ spec:
             - name: NOTIFICATIONS__APN__KEYID
               value: M4QUBD2Q36
             - name: NOTIFICATIONS__APN__APPBUNDLEID
-              value: {{ required .Values.apnsTownsAppIdentifier}}
+              value: {{ required "apnsTownsAppIdentifier is required" .Values.apnsTownsAppIdentifier}}
             - name: NOTIFICATIONS__WEBPUSH__VAPID__SUBJECT
               value: "support@towns.com"
       {{- with .Values.nodeSelector }}
