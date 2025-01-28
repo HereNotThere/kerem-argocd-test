@@ -7,6 +7,11 @@ global:
     gke:
       clusterLocation: us-east4
       clusterName: main-cluster # TODO: consider templatizing this one
+  chains:
+    river:
+      chainId: 6524490
+      contractAddresses:
+        riverRegistry: "0xf18E98D36A6bd1aDb52F776aCc191E69B491c070" # TODO: always update this accross environments
 
 appOfApps:
   default:
@@ -40,3 +45,6 @@ external-secrets:
     name: main-service-account
     annotations:
       iam.gke.io/gcp-service-account: main-service-account@hnt-live-gamma.iam.gserviceaccount.com # TODO: make sure you replace the project ID with the correct one. turn this into a tpl
+
+notification-service:
+  apnsTownsAppIdentifier: com.towns.internal # TODO: make sure you update this on other environments
