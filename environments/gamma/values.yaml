@@ -26,6 +26,14 @@ appOfApps:
     - name: external-secrets
       disable: false
       namespace: external-secrets
+      values:
+        external-secrets:
+          serviceAccount:
+            create: true
+            name: main-service-account
+            annotations:
+              iam.gke.io/gcp-service-account: main-service-account@hnt-live-gamma.iam.gserviceaccount.com # TODO: make sure you replace the project ID with the correct one. turn this into a tpl
+
     # - name: argocd
     #   disable: false
     #   namespace: argocd
@@ -38,13 +46,6 @@ appOfApps:
     - name: notification-service
       disable: false
       namespace: default
+      values:
+        apnsTownsAppIdentifier: com.towns.internal # TODO: make sure you update this on other environments
 
-external-secrets:
-  serviceAccount:
-    create: true
-    name: main-service-account
-    annotations:
-      iam.gke.io/gcp-service-account: main-service-account@hnt-live-gamma.iam.gserviceaccount.com # TODO: make sure you replace the project ID with the correct one. turn this into a tpl
-
-notification-service:
-  apnsTownsAppIdentifier: com.towns.internal # TODO: make sure you update this on other environments
