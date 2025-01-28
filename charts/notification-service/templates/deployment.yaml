@@ -44,7 +44,6 @@ spec:
             {{- toYaml .Values.readinessProbe | nindent 12 }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          command: ["sleep", "infinity"] # TODO: remove me
           env:
             - name: REGISTRYCONTRACT__ADDRESS
               value: {{ required "riverRegistry contract address required" .Values.global.chains.river.contractAddresses.riverRegistry }}
@@ -78,9 +77,9 @@ spec:
                 secretKeyRef:
                   name: notification-service-secrets
                   key: database_host
-            - name: DATABASE__DATABASE__PORT
+            - name: DATABASE__PORT
               value: "5432"
-            - name: DATABASE__DATABASE__USER
+            - name: DATABASE__USER
               value: notification_service
             - name: DATABASE__DATABASE
               value: river
