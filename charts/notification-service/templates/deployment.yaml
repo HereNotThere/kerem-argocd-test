@@ -63,8 +63,8 @@ spec:
               value: "true"
             - name: PERFORMANCETRACKING__PROFILINGENABLED
               value: "true"
-            # - name: DD_TAGS #TODO: is this necessary?
-            
+            - name: DD_TAGS 
+              value: env:{{ required "environmentName is required" .Values.global.environmentName | quote }}
             - name: DISABLEHTTPS
               value: "true"
             - name: DATABASE__PASSWORD
