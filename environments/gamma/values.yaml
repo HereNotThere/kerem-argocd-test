@@ -50,11 +50,11 @@ appOfApps:
         apnsTownsAppIdentifier: com.towns.internal # TODO: make sure you update this on other environments
         image:
           tag: dev # TODO: always update
-        ingress:
-          hosts:
-            - host: river-notification-service-gamma.towns.com #TODO: always update
-              paths:
-                - path: /
-                  pathType: Prefix
+        # ingress:
+        #   hosts:
+        #     - host: river-notification-service-gamma.towns.com #TODO: always update
+        #       paths:
+        #         - path: /
+        #           pathType: Prefix
 
 # TODO: should we set up a solo ingress that routes to the correct service in the correct app?
