@@ -5,9 +5,9 @@ metadata:
   labels:
     {{- include "notification-service.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
-  {{- end }}
+  replicas: 1
+  strategy:
+    type: Recreate #Tell k8s to recreate the pod when the deployment is updated
   selector:
     matchLabels:
       {{- include "notification-service.selectorLabels" . | nindent 6 }}
