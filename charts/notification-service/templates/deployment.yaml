@@ -55,17 +55,17 @@ spec:
             - name: LOG__LEVEL
               value: info
             - name: LOG__NOCOLOR
-              value: true
+              value: "true"
             - name: RUN_MODE
               value: notifications
             - name: DEBUGENDPOINTS__PPROF
-              value: true
+              value: "true"
             - name: PERFORMANCETRACKING__PROFILINGENABLED
-              value: true
+              value: "true"
             # - name: DD_TAGS #TODO: is this necessary?
             
             - name: DISABLEHTTPS
-              value: true
+              value: "true"
             - name: DATABASE__PASSWORD
               valueFrom:
                 secretKeyRef:
