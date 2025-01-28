@@ -48,3 +48,5 @@ appOfApps:
       namespace: default
       values: |
         apnsTownsAppIdentifier: com.towns.internal # TODO: make sure you update this on other environments
+        image:
+          tag: dev
