@@ -49,7 +49,7 @@ spec:
             - name: RIVERCHAIN__CHAINID
               value: {{ required "river chainId required" .Values.global.chains.river.chainId }}
             - name: PORT
-              value: {{ required "service port required" .Values.service.port }}
+              value: "{{ required "service port required" .Values.service.port }}"
             - name: LOG__FORMAT
               value: json
             - name: LOG__LEVEL
@@ -77,7 +77,7 @@ spec:
                   name: notification-service-secrets
                   key: database_host
             - name: DATABASE__DATABASE__PORT
-              value: 5432
+              value: "5432"
             - name: DATABASE__DATABASE__USER
               value: notification_service
             - name: DATABASE__DATABASE
