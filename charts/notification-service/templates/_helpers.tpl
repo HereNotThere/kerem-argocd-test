@@ -31,7 +31,7 @@ Create chart name and version as used by the chart label.
 {{- end }}
 
 {{- define "notification-service.ddTags" -}}
-{{- printf "env:%s,service:%s" $.Values.global.environmentName "notification-service" }}
+{{- printf "env:%s, service:%s" $.Values.global.environmentName "notification-service" }}
 {{- end }}
 
 {{/*

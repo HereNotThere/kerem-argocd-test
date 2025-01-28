@@ -64,7 +64,7 @@ spec:
             - name: PERFORMANCETRACKING__PROFILINGENABLED
               value: "true"
             - name: DD_TAGS 
-              value: {{- include "notification-service.ddTags" . | quote }}
+              value: "{{- include "notification-service.ddTags" . }}"
             - name: DD_AGENT_HOST
               value: "datadog.datadog.svc.cluster.local"
             - name: DD_TRACE_AGENT_PORT
