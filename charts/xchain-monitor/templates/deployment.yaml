@@ -5,7 +5,7 @@ metadata:
   labels:
     {{- include "xchain-monitor.labels" . | nindent 4 }}
 spec:
-  replicas: 0
+  replicas: 1
   strategy:
     type: Recreate #Tell k8s to recreate the pod when the deployment is updated
   selector:
@@ -44,7 +44,7 @@ spec:
             - name: RIVER_ENV
               value: {{ .Values.global.environmentName }}
             - name: INITIAL_BLOCK_NUM
-              value: "1"
+              value: "20500000"
             - name: TRANSACTION_VALID_BLOCKS
               value: "20"
             - name: BASE_PROVIDER_URL
