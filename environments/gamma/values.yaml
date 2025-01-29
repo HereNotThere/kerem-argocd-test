@@ -6,7 +6,7 @@ global:
     projectId: hnt-live-gamma # TODO: make sure we don't reuse this on other environments
     gke:
       clusterLocation: us-east4
-      clusterName: main-cluster # TODO: consider templatizing this one
+      clusterName: main-cluster0gamma # TODO: always update
   chains:
     river:
       chainId: "6524490" # TODO: always update

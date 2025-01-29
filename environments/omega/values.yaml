@@ -6,7 +6,7 @@ global:
     projectId: hnt-live-omega # TODO: make sure we don't reuse this on other environments
     gke:
       clusterLocation: us-east4
-      clusterName: main-cluster
+      clusterName: main-cluster-omega # always update
   chains:
     river:
       chainId: "550" # TODO: always update

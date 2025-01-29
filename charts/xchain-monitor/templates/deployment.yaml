@@ -44,7 +44,7 @@ spec:
             - name: RIVER_ENV
               value: {{ .Values.global.environmentName }}
             - name: INITIAL_BLOCK_NUM
-              value: "20500000"
+              value: "21109999"
             - name: TRANSACTION_VALID_BLOCKS
               value: "20"
             - name: BASE_PROVIDER_URL
