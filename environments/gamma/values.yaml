@@ -43,6 +43,15 @@ appOfApps:
     - name: metrics-aggregator
       disable: false
       namespace: default
+    - name: cert-manager
+      disable: false
+      namespace: cert-manager
+      values: |
+        crds:
+          enabled: true
+        global:
+          leaderElection:
+            namespace: cert-manager
     - name: notification-service
       disable: false
       namespace: default
