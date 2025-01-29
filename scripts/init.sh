@@ -1,8 +1,14 @@
+if [ -z "$ENV" ]; then
+  echo "ENV is not set"
+  exit 1
+fi
+
 helm repo add argo https://argoproj.github.io/argo-helm
 helm repo add external-secrets https://charts.external-secrets.io
 helm repo update
 
 helm install argocd argo/argo-cd -n argocd --create-namespace
 
-# TODO: don't hardcode the environment name
-kubectl apply -f ./environments/gamma/applications.yaml
+echo "Creating environment $ENV"
+
+kubectl apply -f "./environments/${ENV}/applications.yaml"
