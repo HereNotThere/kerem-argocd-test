@@ -57,7 +57,7 @@ spec:
             - name: LOG_PRETTY
               value: "false"
             - name: BLOCK_SCAN_CHUNK_SIZE
-              value: "100"
+              value: "10000"
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
