@@ -15,7 +15,7 @@ global:
 
 appOfApps:
   default:
-    valuesFile: ../../environments/gamma/values.yaml
+    valuesFile: ../../environments/gamma/values.yaml # TODO: always update
     spec:
       project: default
       source:
