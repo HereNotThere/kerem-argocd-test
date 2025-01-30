@@ -38,7 +38,7 @@ appOfApps:
       namespace: cert-manager
       values: |
         cert-manager:
-          enabled: false
+          enabled: true
 
     # - name: argocd
     #   disable: false
