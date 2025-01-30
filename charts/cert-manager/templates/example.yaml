@@ -35,3 +35,18 @@ spec:
   type: ClusterIP
 
 
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web
+  annotations:
+    kubernetes.io/ingress.class: gce
+    kubernetes.io/ingress.allow-http: "true"
+    kubernetes.io/ingress.global-static-ip-name: "main-alb-ip"
+spec:
+  defaultBackend:
+    service:
+      name: web
+      port:
+        number: 80
