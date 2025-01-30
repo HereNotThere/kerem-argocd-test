@@ -52,18 +52,10 @@ spec:
         number: 80
 
 ---
-# issuer-lets-encrypt-staging.yaml
-apiVersion: cert-manager.io/v1
-kind: Issuer
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
 metadata:
-  name: letsencrypt-staging # TODO: make this a variable
+  name: managed-cert
 spec:
-  acme:
-    server: https://acme-staging-v02.api.letsencrypt.org/directory # TODO: turn this into the production URL
-    email: kerem@hntlabs.com # TODO: make this a variable
-    privateKeySecretRef:
-      name: letsencrypt-staging # TODO: make this a variable
-    solvers:
-    - http01:
-        ingress:
-          name: web
+  domains:
+    - river-notification-service-gamma.towns.com # TODO: make this a variable
