@@ -39,7 +39,7 @@ appOfApps:
       values: |
         cert-manager:
           crds:
-            enabled: false
+            enabled: true
 
     # - name: argocd
     #   disable: false
