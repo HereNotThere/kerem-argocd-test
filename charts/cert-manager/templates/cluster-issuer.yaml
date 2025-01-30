@@ -1,0 +1,7 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: cluster-issuer
+spec:
+  ca:
+    secretName: cluster-issuer-ca-key-pair
