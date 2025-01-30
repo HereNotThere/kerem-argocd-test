@@ -33,6 +33,12 @@ appOfApps:
             name: main-service-account
             annotations:
               iam.gke.io/gcp-service-account: main-service-account@hnt-live-gamma.iam.gserviceaccount.com # TODO: make sure you replace the project ID with the correct one. turn this into a tpl
+    - name: cert-manager
+      disable: false
+      namespace: cert-manager
+      values: |
+        cert-manager:
+          enabled: false
 
     # - name: argocd
     #   disable: false
