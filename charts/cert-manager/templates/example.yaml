@@ -50,12 +50,3 @@ spec:
       name: web
       port:
         number: 80
-
----
-apiVersion: networking.gke.io/v1
-kind: ManagedCertificate
-metadata:
-  name: managed-cert
-spec:
-  domains:
-    - river-notification-service-gamma.towns.com # TODO: make this a variable
