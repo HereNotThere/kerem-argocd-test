@@ -57,6 +57,7 @@ apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: letsencrypt-staging # TODO: make this a variable
+spec:
   acme:
     server: https://acme-staging-v02.api.letsencrypt.org/directory # TODO: turn this into the production URL
     email: kerem@hntlabs.com # TODO: make this a variable
