@@ -50,3 +50,19 @@ spec:
       name: web
       port:
         number: 80
+
+---
+# issuer-lets-encrypt-staging.yaml
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: letsencrypt-staging # TODO: make this a variable
+  acme:
+    server: https://acme-staging-v02.api.letsencrypt.org/directory # TODO: turn this into the production URL
+    email: kerem@hntlabs.com # TODO: make this a variable
+    privateKeySecretRef:
+      name: letsencrypt-staging # TODO: make this a variable
+    solvers:
+    - http01:
+        ingress:
+          name: web
