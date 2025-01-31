@@ -24,7 +24,7 @@ appOfApps:
 
   applications:
     - name: external-secrets
-      disable: false
+      disable: true
       namespace: external-secrets
       values: |
         external-secrets:
@@ -34,7 +34,7 @@ appOfApps:
             annotations:
               iam.gke.io/gcp-service-account: main-service-account@hnt-live-gamma.iam.gserviceaccount.com # TODO: make sure you replace the project ID with the correct one. turn this into a tpl
     - name: cert-manager
-      disable: false
+      disable: true
       namespace: cert-manager
       values: |
         cert-manager:
@@ -42,16 +42,16 @@ appOfApps:
             enabled: true
 
     # - name: argocd
-    #   disable: false
+    #   disable: true
     #   namespace: argocd
     - name: datadog
-      disable: false
+      disable: true
       namespace: datadog
     - name: metrics-aggregator
-      disable: false
+      disable: true
       namespace: default
     - name: notification-service
-      disable: false
+      disable: true
       namespace: default
       values: |
         apnsTownsAppIdentifier: com.towns.internal # TODO: make sure you update this on other environments
