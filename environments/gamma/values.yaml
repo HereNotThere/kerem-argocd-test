@@ -1,12 +1,7 @@
 # ################### GLOBAL ###################
 
 global:
-  environmentName: gamma
-  gcp:
-    projectId: hnt-live-gamma # TODO: make sure we don't reuse this on other environments
-    gke:
-      clusterLocation: us-east4
-      clusterName: main-cluster-gamma # TODO: always update
+  environmentName: gamma # TODO: always update
   chains:
     river:
       chainId: "6524490" # TODO: always update
@@ -36,10 +31,6 @@ appOfApps:
     - name: cert-manager
       disable: true
       namespace: cert-manager
-      values: |
-        cert-manager:
-          crds:
-            enabled: true
 
     # - name: argocd
     #   disable: true

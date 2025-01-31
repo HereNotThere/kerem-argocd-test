@@ -19,8 +19,13 @@ spec:
       valueFiles:
       - './values.yaml'
       - {{ default $.Values.appOfApps.default.valuesFile .valuesFile }}
-      {{- with .values }}
       values:
+        gcp:
+          projectId: hnt-live-{{ $.Values.global.environmentName }}
+          gke:
+            clusterLocation: us-east4
+            clusterName: main-cluster-{{ $.Values.global.environmentName }}
+      {{- with .values }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
       
