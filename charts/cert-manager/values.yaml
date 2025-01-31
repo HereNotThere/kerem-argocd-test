@@ -4,3 +4,10 @@ global:
   leaderElection:
     namespace: cert-manager
 
+environments:
+  staging:
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    email: john@hntlabs.com
+  prod:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: john@hntlabs.com

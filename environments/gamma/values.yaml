@@ -12,7 +12,8 @@ global:
       chainId: "6524490" # TODO: always update
       contractAddresses:
         riverRegistry: "0xf18E98D36A6bd1aDb52F776aCc191E69B491c070" # TODO: always update this accross environments
-
+  leaderElection:
+    namespace: cert-manager
 appOfApps:
   default:
     valuesFile: ../../environments/gamma/values.yaml # TODO: always update
@@ -49,9 +50,13 @@ appOfApps:
       values: |
         crds:
           enabled: true
-        global:
-          leaderElection:
-            namespace: cert-manager
+        environments:
+          staging:
+            server: https://acme-staging-v02.api.letsencrypt.org/directory
+            email: john@hntlabs.com
+          prod:
+            server: https://acme-v02.api.letsencrypt.org/directory
+            email: john@hntlabs.com
     - name: notification-service
       disable: false
       namespace: default

@@ -1,0 +1,20 @@
+{{- range $envName, $envData := .Values.environments }}
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  labels:
+    argocd.argoproj.io/instance: cert-manager
+  name: letsencrypt-{{ $envName }}
+  namespace: cert-manager
+spec:
+  acme:
+    server: {{ $envData.server }}
+    email: {{ $envData.email }}
+    privateKeySecretRef:
+      name: letsencrypt-{{ $envName }}
+    solvers:
+      - http01:
+          ingress:
+            ingressClassName: nginx
+{{- end }}
