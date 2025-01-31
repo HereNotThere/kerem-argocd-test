@@ -1,7 +1,12 @@
 # ################### GLOBAL ###################
 
 global:
-  environmentName: gamma # TODO: always update
+  environmentName: gamma
+  gcp:
+    projectId: hnt-live-gamma # TODO: make sure we don't reuse this on other environments
+    gke:
+      clusterLocation: us-east4
+      clusterName: main-cluster-gamma # TODO: always update
   chains:
     river:
       chainId: "6524490" # TODO: always update
@@ -10,7 +15,7 @@ global:
 
 appOfApps:
   default:
-    valuesFile: ../../environments/{{ .Values.global.environmentName }}/values.yaml
+    valuesFile: ../../environments/gamma/values.yaml # TODO: always update
     spec:
       project: default
       source:
@@ -19,7 +24,7 @@ appOfApps:
 
   applications:
     - name: external-secrets
-      disable: false
+      disable: true
       namespace: external-secrets
       values: |
         external-secrets:
@@ -27,7 +32,7 @@ appOfApps:
             create: true
             name: main-service-account
             annotations:
-              iam.gke.io/gcp-service-account: main-service-account@hnt-live-{{ .Values.global.environmentName }}.iam.gserviceaccount.com
+              iam.gke.io/gcp-service-account: main-service-account@hnt-live-gamma.iam.gserviceaccount.com # TODO: make sure you replace the project ID with the correct one. turn this into a tpl
     - name: cert-manager
       disable: true
       namespace: cert-manager
