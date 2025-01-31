@@ -19,7 +19,7 @@ appOfApps:
     spec:
       project: default
       source:
-        repoURL: https://github.com/HereNotThere/kerem-argocd-test
+        repoURL: https://github.com/HereNotThere/argocd
         targetRevision: main
 
   applications:
