@@ -27,7 +27,7 @@ appOfApps:
             create: true
             name: main-service-account
             annotations:
-              iam.gke.io/gcp-service-account: main-service-account@hnt-live-gamma.iam.gserviceaccount.com # TODO: make sure you replace the project ID with the correct one. turn this into a tpl
+              iam.gke.io/gcp-service-account: main-service-account@hnt-live-{{ .Values.global.environmentName }}.iam.gserviceaccount.com
     - name: cert-manager
       disable: true
       namespace: cert-manager
