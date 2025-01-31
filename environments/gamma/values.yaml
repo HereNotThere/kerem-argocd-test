@@ -10,7 +10,7 @@ global:
 
 appOfApps:
   default:
-    valuesFile: ../../environments/gamma/values.yaml # TODO: always update
+    valuesFile: ../../environments/{{ .Values.global.environmentName }}/values.yaml
     spec:
       project: default
       source:
@@ -19,7 +19,7 @@ appOfApps:
 
   applications:
     - name: external-secrets
-      disable: true
+      disable: false
       namespace: external-secrets
       values: |
         external-secrets:
